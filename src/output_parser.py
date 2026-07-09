@@ -3,7 +3,7 @@ This file defines the Pydantic schema used to process the results of the LLM.
 """
 from typing import Literal, List
 from pydantic import BaseModel
-from StereotypeDetector.src.prompts import STEREOTYPES_LIST
+from src.prompts import STEREOTYPES_LIST
 
 TRAIT_NAMES = tuple(item["name"] for item in STEREOTYPES_LIST)
 TraitName = Literal[TRAIT_NAMES]

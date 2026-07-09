@@ -2,8 +2,8 @@
 This file sends requests to OpenAI, Nebius, and Anthropic APIs using the prompts defined in `prompts.py`. 
 The responses are parsed according to a Pydantic Schema and stored locally. 
 """
-from StereotypeDetector.src.prompts import Prompt
-from StereotypeDetector.src.output_parser import ValidationSchema
+from src.prompts import Prompt
+from src.output_parser import ValidationSchema
 from openai import OpenAI
 from anthropic import Anthropic
 from pathlib import Path
@@ -95,7 +95,7 @@ class LLMService:
                 betas=[ANTHROPIC_STRUCTURED_OUTPUTS_BETA],
                 system=system_prompt,
                 messages=anthropic_messages,
-                response_model=ValidationSchema
+                output_format=ValidationSchema
             )
             return response.parsed_output
 
