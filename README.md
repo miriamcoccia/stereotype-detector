@@ -12,7 +12,7 @@ Upload an image → pick a model → pick which traits to check → get flagged 
 - You pick a model: GPT, Gemma3 (via Nebius), or Claude.
 - You pick which traits to check (e.g. "cultural sensitivity", "power dynamics", "fairness and justice" — 19 total).
 - The app sends the image + questions to the LLM.
-- The LLM's answer is validated against a strict schema (Pydantic) — no malformed output.
+- The LLM's answer is validated against a strict schema (Pydantic)
 - Results show as cards: ✅ pass or ⚠️ flagged, with the model's reasoning.
 
 ---
@@ -72,16 +72,16 @@ Opens automatically in your browser. If not: go to `http://localhost:8501`
 
 ## How to use it
 
-1. **Upload an image** — sidebar, left side.
-2. **Choose a model** — dropdown in the sidebar:
+1. **Upload an image** →  sidebar, left side.
+2. **Choose a model** → dropdown in the sidebar:
    - GPT (OpenAI)
    - Gemma3 27b (Nebius)
    - Claude Sonnet 4.6 (Anthropic)
-3. **Choose traits to check** — multiselect. Hover over the ℹ️ next to any trait name (or the "What do these mean?" expander) to see its exact definition.
+3. **Choose traits to check** → multiselect. Hover over the ℹ️ next to any trait name (or the "What do these mean?" expander) to see its exact definition.
 4. Click **Run Analysis**.
 5. **Read results** on the right:
-   - ✅ "No stereotype detected" — response matched the expected (neutral) answer.
-   - ⚠️ "Flagged for review" — response didn't match, worth a manual look.
+   - ✅ "No stereotype detected" → response matched the expected (neutral) answer.
+   - ⚠️ "Flagged for review" → response didn't match, worth a manual look.
    - Reasoning text under each card explains the model's judgment.
 
 ---
@@ -164,6 +164,4 @@ TBD
 
 ## Contributing
 
-- Keep API keys out of commits — check `git status` before `git add .` if unsure.
-- New trait definitions go in `STEREOTYPES_LIST` in `src/prompts.py` — keep the schema in `src/output_parser.py` in sync (`TraitName` is generated automatically from this list, so usually no change needed there).
-- New model providers: add detection logic in `LLMService._identify_provider()` and a client branch in `_identify_client()` (see `src/llm_service.py`).
+TBD
