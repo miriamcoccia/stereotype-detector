@@ -29,7 +29,8 @@ STEREOTYPES = [
 
 MODEL_OPTIONS = {
     "GPT-5.4 mini": "gpt-5.4-mini-2026-03-17",
-    "Gemma3 27b it": "google/gemma-3-27b-it"
+    "Gemma3 27b it": "google/gemma-3-27b-it",
+    "Claude Sonnet 4.6": "claude-sonnet-4-6",
 }
 
 
