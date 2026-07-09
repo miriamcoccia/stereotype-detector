@@ -38,6 +38,8 @@ You are evaluating whether an image displays the {count} stereotype(s):
 
 {traits_block}
 
+Return exactly {count} evaluation(s) in your response — one for each stereotype listed above, and no others.
+
 -------------------------------
 REQUIRED OUTPUT FORMAT (STRICT SCHEMA):
 
