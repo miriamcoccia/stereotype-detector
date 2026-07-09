@@ -1,0 +1,312 @@
+/* ============================================
+   Stereotype Detector — Design System
+   Blush gradient / soft pink / glass panels
+   ============================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --text-color: #3A2E39 !important;
+    --background-color: #FFF5F7 !important;
+}
+
+/* ---------- Base ---------- */
+html,
+body,
+[class*="css"] {
+    font-family: 'Inter', sans-serif;
+    color: #3A2E39;
+}
+
+.stApp {
+    background: linear-gradient(160deg, #FFF5F7 0%, #FFE4EC 45%, #FDE9F3 100%);
+    background-attachment: fixed;
+}
+
+.stApp,
+.stApp * {
+    color: #3A2E39;
+}
+
+/* Hide default Streamlit chrome for a cleaner look */
+#MainMenu,
+footer,
+header[data-testid="stHeader"] {
+    background: transparent;
+}
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"] {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    border-right: 1px solid rgba(255, 111, 165, 0.18);
+}
+
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    font-family: 'Montserrat', serif;
+    font-weight: 600;
+    color: #3A2E39;
+}
+
+/* ---------- Hero ---------- */
+.hero-wrap {
+    position: relative;
+    padding: 2.2rem 0 1.4rem 0;
+}
+
+.hero-wrap::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: -40px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(255, 111, 165, 0.35) 0%, rgba(255, 111, 165, 0) 70%);
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.hero-title {
+    font-family: 'Montserrat', serif;
+    font-weight: 600;
+    font-size: 4rem;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.2rem;
+    color: #3A2E39;
+}
+
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.02rem;
+    color: #6B5A66;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 7%;
+}
+
+/* ---------- Sticky image column ---------- */
+[data-testid="stHorizontalBlock"]>div:nth-child(1) {
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    height: fit-content;
+}
+
+/* ---------- Headers within the page ---------- */
+h1,
+h2,
+h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    color: #3A2E39;
+}
+
+/* ---------- File uploader ---------- */
+[data-testid="stFileUploader"] section {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1.5px dashed rgba(255, 111, 165, 0.4);
+    border-radius: 16px;
+}
+
+[data-testid="stFileUploader"] section:hover {
+    border-color: rgba(255, 111, 165, 0.7);
+}
+
+/* ---------- Selectbox / Multiselect ---------- */
+[data-baseweb="select"]>div {
+    background: rgba(255, 255, 255, 0.65) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 111, 165, 0.25) !important;
+}
+
+/* Multiselect chosen-item pills */
+[data-baseweb="tag"] {
+    background: linear-gradient(135deg, #FF9BC4 0%, #FFC1DD 100%) !important;
+    border-radius: 999px !important;
+}
+
+[data-baseweb="tag"] span {
+    color: #3A2E39 !important;
+    font-weight: 500;
+}
+
+/* ---------- Buttons ---------- */
+button[kind="primary"] {
+    background: linear-gradient(135deg, #FF6FA5 0%, #FF9BC4 100%) !important;
+    border: none !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    box-shadow: 0 4px 14px rgba(255, 111, 165, 0.35) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+button[kind="primary"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(255, 111, 165, 0.45) !important;
+}
+
+button[kind="secondary"] {
+    border-radius: 999px !important;
+    border: 1px solid rgba(255, 111, 165, 0.4) !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    color: #3A2E39 !important;
+}
+
+/* ---------- Uploaded image preview ---------- */
+[data-testid="stImage"] img {
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(58, 46, 57, 0.12);
+}
+
+/* ---------- Panel titles (aligned across both columns) ---------- */
+.panel-title {
+    font-family: 'Montserrat', serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: #3A2E39;
+    margin-bottom: 1.1rem;
+}
+
+/* ---------- Image panel (matches trait-card treatment) ---------- */
+.image-panel {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 111, 165, 0.15);
+    border-radius: 18px;
+    padding: 1.2rem;
+}
+
+.image-panel img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+/* ---------- Empty state placeholders ---------- */
+.empty-panel {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1.5px dashed rgba(255, 111, 165, 0.3);
+    border-radius: 18px;
+    padding: 3.5rem 1.5rem;
+    text-align: center;
+    color: #9A8790;
+    font-size: 0.9rem;
+}
+
+/* ---------- Result cards ---------- */
+.trait-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 111, 165, 0.15);
+    border-radius: 18px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 1.1rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.trait-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(58, 46, 57, 0.08);
+}
+
+.trait-name {
+    font-family: 'Montserrat', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+}
+
+.trait-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: #9A8790;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.badge-pass {
+    background: #B7E4C7;
+    color: #1E4620;
+}
+
+.badge-flag {
+    background: #FFB4A2;
+    color: #5C1D0E;
+}
+
+.trait-reasoning {
+    font-size: 0.9rem;
+    color: #5A4A54;
+    line-height: 1.45;
+}
+
+/* ---------- Font consistency across all widgets ---------- */
+[data-testid="stSidebar"] label,
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stCaptionContainer"],
+[data-testid="stFileUploaderFileName"],
+[data-baseweb="select"] *,
+.stMultiSelect label,
+.stSelectbox label {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* ---------- Sidebar spacing between widgets ---------- */
+[data-testid="stSidebar"] .block-container {
+    padding-top: 1.5rem;
+}
+
+[data-testid="stSidebar"] div[data-testid="stFileUploader"],
+[data-testid="stSidebar"] div[data-testid="stSelectbox"],
+[data-testid="stSidebar"] div[data-testid="stMultiSelect"],
+[data-testid="stSidebar"] div[data-testid="stExpander"] {
+    margin-bottom: 1.4rem;
+}
+
+/* ---------- Glossary expander ---------- */
+[data-testid="stExpander"] {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 111, 165, 0.15);
+    border-radius: 12px;
+}
+
+/* ---------- Info tooltip dot on trait cards ---------- */
+.info-dot {
+    font-size: 0.75rem;
+    color: #C77A9B;
+    cursor: help;
+}
+
+/* ---------- Spinner, tinted to match theme ---------- */
+.stSpinner>div>div {
+    border-top-color: #FF6FA5 !important;
+}
+
+/* ---------- Scrollbar (subtle, matches theme) ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 111, 165, 0.35);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
